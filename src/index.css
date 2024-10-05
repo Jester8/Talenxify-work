@@ -4,6 +4,13 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@font-face {
+  font-family: "Coolevetica";
+  src: url("/fonts/Coolevetica.otf") format("opentype"); /* Adjust if using TTF */
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --color-purple: #18d98b;
   --color-green: #865ae6;
@@ -12,6 +19,10 @@
 
 body {
   font-family: "Roboto", sans-serif;
+}
+
+.font-coolevetica {
+  font-family: "Coolevetica", sans-serif;
 }
 
 .text-purple {

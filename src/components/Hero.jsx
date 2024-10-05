@@ -7,7 +7,7 @@ const Hero = () => {
     <div className="flex flex-col items-center px-4 py-8 space-y-2 lg:flex-row lg:items-start lg:justify-between lg:px-8 lg:py-12 mt-9">
       {/* Text Section */}
       <div className="w-full text-center sm:mt-0 lg:text-left lg:w-1/2 space-y-1 animate-slide-in-left font-roboto">
-        <h2 className="text-green font-bold text-4xl lg:text-6xl leading-tight">
+        <h2 className="text-green font-bold text-4xl lg:text-6xl leading-tight font-coolvetica">
           Your go-to platform
           <br />
           for hiring exceptional

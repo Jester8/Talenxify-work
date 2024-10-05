@@ -15,42 +15,47 @@ const NavBar = () => {
   ];
 
   return (
-    <nav className="bg-white">
+    <nav className="bg-white shadow-sm">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center py-4">
+          {/* Logo Section */}
           <div className="flex items-center">
-            <Link
-              to="/"
-              className="flex items-center py-4 px-2 ml-0 lg:ml-[-290px]"
-            >
+            <Link to="/" className="flex items-center">
               <img src={logo} alt="Logo" className="h-auto w-auto max-h-12" />
             </Link>
           </div>
-          <div className="hidden lg:flex items-center justify-center flex-grow">
+
+          {/* Desktop Menu Items */}
+          <div className="hidden lg:flex items-center justify-center flex-grow -0 lg:ml-[20px] md:ml-0">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
-                className={`py-4 px-2 text-dark text-lg xl:text-2xl font-semibold hover:text-purple-500 transition duration-300 ${
+                className={`py-4 px-4 text-lg xl:text-xl font-semibold transition duration-300 ${
                   location.pathname === item.path
                     ? "text-blue-800 border-b-2 border-blue-800"
-                    : ""
+                    : "text-dark hover:text-purple-500"
                 }`}
               >
                 {item.name}
               </Link>
             ))}
           </div>
-          <div className="hidden lg:flex items-center">
+
+          {/* Desktop Buttons */}
+          <div className="hidden lg:flex ml-0 lg:ml-[20px] md:ml-0">
             <Buttons />
           </div>
+
+          {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center">
             <button
-              className="outline-none mobile-menu-button"
+              className="mobile-menu-button"
               onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle Menu"
             >
               <svg
-                className="w-6 h-6 text-gray-500 hover:text-purple-500"
+                className="w-6 h-6 text-gray-500 hover:text-purple-500 transition duration-300"
                 fill="none"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -68,21 +73,28 @@ const NavBar = () => {
           </div>
         </div>
       </div>
+
+      {/* Mobile Menu */}
       <div className={`${isOpen ? "block" : "hidden"} lg:hidden`}>
-        {navItems.map((item) => (
-          <Link
-            key={item.name}
-            to={item.path}
-            className={`block py-2 px-4 text-sm hover:bg-purple-500 hover:text-white transition duration-300 ${
-              location.pathname === item.path ? "bg-purple-500 text-white" : ""
-            }`}
-            onClick={() => setIsOpen(false)}
-          >
-            {item.name}
-          </Link>
-        ))}{" "}
-        <div className="py-2 px-4 hidden lg:block">
-          <Buttons />
+        <div className="bg-white shadow-lg">
+          {navItems.map((item) => (
+            <Link
+              key={item.name}
+              to={item.path}
+              className={`block py-2 px-4 text-sm transition duration-300 ${
+                location.pathname === item.path
+                  ? "bg-purple-500 text-white"
+                  : "text-dark hover:bg-purple-500 hover:text-white"
+              }`}
+              onClick={() => setIsOpen(false)}
+            >
+              {item.name}
+            </Link>
+          ))}
+          {/* Mobile Buttons */}
+          <div className="py-4 px-4">
+            <Buttons />
+          </div>
         </div>
       </div>
     </nav>

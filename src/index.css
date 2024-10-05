@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Coolvetica&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 @import "tailwindcss/base";
 @import "tailwindcss/components";
@@ -6,11 +6,12 @@
 
 :root {
   --color-purple: #18d98b;
-  --color-green: #18bd98;
+  --color-green: #865ae6;
+  --color-blue: #00094e;
 }
 
 body {
-  font-family: "Coolvetica", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .text-purple {
@@ -19,6 +20,18 @@ body {
 
 .text-green {
   color: var(--color-green);
+}
+
+.text-blue {
+  color: var(--color-blue);
+}
+
+.bg-green {
+  background-color: var(--color-green);
+}
+
+.border-green {
+  border-color: var(--color-green);
 }
 
 @keyframes slide-in-left {
@@ -34,4 +47,26 @@ body {
 
 .animate-slide-in-left {
   animation: slide-in-left 0.5s ease-out forwards;
+}
+
+@keyframes slide-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-slide-left {
+  animation: slide-left 20s linear infinite;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }

@@ -3,16 +3,16 @@ import { Link } from "react-router-dom";
 
 const Buttons = () => {
   return (
-    <div className="flex items-center space-x-4 mr-[-390px] hidden md:block">
+    <div className="flex items-center space-x-3 hidden md:flex">
       <Link
         to="/signup"
-        className="bg-blue-600 text-white px-20 py-4  text-1xl font-semibold font-Coolvetica rounded-full hover:bg-blue-700 transition duration-300"
+        className="bg-green text-white px-6 md:px-4 lg:px-[50px] lg:py-2 py-2 md:py-2 lg:py-3 text-sm md:text-md lg:text-lg font-semibold  rounded-full  transition duration-300"
       >
         SIGN UP
       </Link>
       <Link
         to="/login"
-        className="bg-white text-blue-800 px-20 py-4  text-1xl font-semibold rounded-full border border-blue-800 hover:bg-blue-50 transition duration-300"
+        className="bg-white text-green px-6 md:px-8 lg:px-[50px] lg:py-2 py-2 md:py-2  text-sm md:text-md lg:text-lg font-semibold rounded-full border border-green hover:bg-green transition duration-300"
       >
         LOGIN
       </Link>
